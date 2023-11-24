@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://media.istockphoto.com/id/1458698228/photo/selective-focus-wood-table-top-on-blur-kitchen-counter-background.jpg?s=612x612&w=0&k=20&c=Lz3Ry_4fcYgymHz_jh51xCX0vWnY2dWDETEUa72HE0w=') center/cover fixed no-repeat;
+            color: #fff;
+        }
+
+        header {
+            background-color: #9e4d4d;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .reservation-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .reservation-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 8px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .accept-btn,
+        .decline-btn {
+            padding: 8px;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+        .accept-btn {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .decline-btn {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Admin Interface</h1>
+    </header>
+
+    <section>
+        <h2>Reservation List</h2>
+        <ul class="reservation-list" id="reservationList">
+            <!-- Reservation items will be dynamically added here -->
+        </ul>
+        <button onclick="addRandomReservation()">Add Random Reservation</button>
+    </section>
+
+    <script>
+        const reservations = [
+            { id: 1, name: 'John Doe', date: '2023-11-15', time: '19:00', status: 'Pending' },
+            { id: 2, name: 'Jane Doe', date: '2023-11-16', time: '20:00', status: 'Pending' },
+            { id: 3, name: 'Bob Smith', date: '2023-11-17', time: '18:30', status: 'Pending' },
+            { id: 4, name: 'Alice Johnson', date: '2023-11-18', time: '21:15', status: 'Pending' },
+            { id: 5, name: 'Charlie Brown', date: '2023-11-19', time: '19:45', status: 'Pending' },
+            // Add more reservations as needed
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            updateReservationList();
+        });
+
+        function addRandomReservation() {
+            const randomId = Math.floor(Math.random() * 1000);
+            const randomName = Guest${randomId};
+            const randomDate = '2023-12-01';
+            const randomTime = ${Math.floor(Math.random() * 24)}:00;
+            const randomStatus = Math.random() < 0.5 ? 'Pending' : 'Accepted';
+
+            reservations.push({ id: randomId, name: randomName, date: randomDate, time: randomTime, status: randomStatus });
+            updateReservationList();
+        }
+
+        function acceptReservation(reservationId) {
+            const reservation = findReservationById(reservationId);
+            if (reservation) {
+                reservation.status = 'Accepted';
+                updateReservationList();
+            }
+        }
+
+        function declineReservation(reservationId) {
+            const reservation = findReservationById(reservationId);
+            if (reservation) {
+                reservation.status = 'Declined';
+                updateReservationList();
+            }
+        }
+
+        function findReservationById(reservationId) {
+            return reservations.find(reservation => reservation.id === reservationId);
+        }
+
+        function updateReservationList() {
+            const reservationList = document.getElementById('reservationList');
+            reservationList.innerHTML = '';
+            reservations.forEach(reservation => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('reservation-item');
+                listItem.innerHTML = `
+                    <div>
+                        <strong>${reservation.name}</strong>
+                        <br>Date: ${reservation.date}, Time: ${reservation.time}
+                    </div>
+                    <div>
+                        Status: ${reservation.status}
+                        <button class="accept-btn" onclick="acceptReservation(${reservation.id})">Accept</button>
+                        <button class="decline-btn" onclick="declineReservation(${reservation.id})">Decline</button>
+                    </div>
+                `;
+                reservationList.appendChild(listItem);
+            });
+        }
+    </script>
+
+</body>
+</html>

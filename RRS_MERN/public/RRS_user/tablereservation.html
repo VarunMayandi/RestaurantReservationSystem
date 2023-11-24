@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Reservation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        #reservation-form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #suggestions {
+            float: right;
+            width: 40%;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #submit-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="reservation-form">
+                    <h2>Table Reservation</h2>
+                    <form id="booking-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">Number of Guests:</label>
+                            <input type="number" class="form-control" id="guests" name="guests" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Date:</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Time:</label>
+                            <input type="time" class="form-control" id="time" name="time" required>
+                        </div>
+
+                        <button type="button" class="btn btn-success" id="submit-btn" onclick="submitForm()">Make Your Booking</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="suggestions">
+                    <h3>Suggestions</h3>
+                    <p> Feel free to leave any special requests or suggestions here:</p>
+                    <textarea class="form-control" rows="10" id="suggestion-box"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact-info">
+            <h3>Contact Information</h3>
+            <p>Restaurant Address: </p>
+            <p>For inquiries, please contact us at: </p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function submitForm() {
+            // Add logic to handle form submission (e.g., send data to server)
+            alert("Booking submitted!");
+        }
+    </script>
+</body>
+</html>

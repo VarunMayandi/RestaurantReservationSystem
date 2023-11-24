@@ -1,0 +1,94 @@
+<!-- public/menu.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restaurant Menu</title>
+    <!-- Add your stylesheets and other head elements -->
+</head>
+
+<body>
+    <header>
+        <h1>Our Menu</h1>
+    </header>
+
+    <main class="menu" id="menuContainer">
+        <!-- Items will be dynamically added here -->
+    </main>
+
+    <button id="add-item-btn" onclick="redirectToForm('add')">Add Item</button>
+
+    <footer aria-label="Website Footer">
+        <!-- Your existing footer content -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fetch items from MongoDB and render them
+            fetchItems();
+        });
+
+        function fetchItems() {
+    fetch('http://localhost:5000/api/')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(items => {
+            renderMenu(items);
+        })
+        .catch(error => console.log('Error fetching items:', error));
+}
+
+
+function renderMenu(items) {
+    console.log('Rendering menu with items:', items);
+    const menuContainer = document.getElementById('menuContainer');
+
+    
+
+    // Render each item
+    items.forEach(item => {
+        console.log('Rendering item:', item);
+        const itemElement = document.createElement('div');
+        itemElement.className = 'menu-item';
+        itemElement.innerHTML = `
+            <img src="food_placeholder.jpg" alt="${item.name}">
+            <h2>${item.name}</h2>
+            <p class="price">$${item.price.toFixed(2)}</p>
+            <div class="quantity">
+                <label for="quantity-${item._id}">Quantity:</label>
+                <input type="number" id="quantity-${item._id}" name="quantity-${item._id}" value="1" min="1">
+            </div>
+            <button class="modify-btn" onclick="redirectToForm('modify', '${item._id}')">Modify</button>
+            <button class="delete-btn" onclick="deleteItem('${item._id}')">Delete</button>
+        `;
+
+        menuContainer.appendChild(itemElement);
+    });
+}
+
+
+        function redirectToForm(action, itemId) {
+            localStorage.setItem('itemId', itemId);
+            window.location.href = `form.html?action=${action}`;
+        }
+
+        function deleteItem(itemId) {
+            // Implement delete logic or call an API to delete the item from MongoDB
+            console.log('Delete item with ID:', itemId);
+            // After deletion, fetch items again to update the menu
+            fetchItems();
+        }
+    </script>
+
+    <!-- Your existing script tags -->
+    <!-- ... -->
+
+</body>
+
+</html>

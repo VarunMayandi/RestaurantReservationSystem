@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.T.D Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/styles/style.css">
+</head>
+
+<body>
+    <section class="ftco-section">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="ftco-navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="#">Customers</a>
+                                <a class="dropdown-item" href="#">Staff</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link">Manage Bookings</a></li>
+                        <li class="nav-item"><a href="./Manage Restaurant/Manage Restaurant.html" class="nav-link">Manage Restaurant</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">View Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- END nav -->
+        <div class="admin-dashboard">
+            <div class="sidebar">
+                <div class="admin-profile">
+                    <img src="../assets/images/STD_white.png" class="newadmin" alt="STD">
+                </div>
+                <h2></h2>
+                <nav aria-label="Admin navigation" class="admin-nav">
+                    <ul>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Manage Reservations</a></li>
+                        <li><a href="#">Manage Menus</a></li>
+                        <li><a href="./manage_booking/admin.html">Manage Booking</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-content">
+                <h1>Reservations</h1>
+                <table class="table">
+                    <!-- Table Head -->
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>No. of Guests</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <!-- Table Body -->
+                    <tbody>
+                        <!-- Reservation Row -->
+                        <tr>
+                            <td>John Doe</td>
+                            <td>2023-12-01</td>
+                            <td>20:00</td>
+                            <td>2</td>
+                            <td>Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>2023-12-02</td>
+                            <td>12:00</td>
+                            <td>2</td>
+                            <td>Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>James Johnson</td>
+                            <td>2023-12-03</td>
+                            <td>18:30</td>
+                            <td>3</td>
+                            <td>Cancelled</td>
+                        </tr>
+                        <tr>
+                            <td>Jessica Williams</td>
+                            <td>2023-12-04</td>
+                            <td>19:00</td>
+                            <td>2</td>
+                            <td>Confirmed</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row my-4">
+                    <!-- Total Reservations Card -->
+                    <div class="col-lg-4">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-gradient-header" role="heading" aria-level="2">Total Reservations</div>
+                            <div class="card-gradient-body" role="text">
+                                <h5 class="card-title" aria-label="Total Reservations: 12">12</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cancelled Reservations Card -->
+                    <div class="col-lg-4">
+                        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                            <div class="card-gradient-header" role="heading" aria-level="2">Cancelled Reservations</div>
+                            <div class="card-gradient-body" role="text">
+                                <h5 class="card-title" aria-label="Cancelled Reservations: 2">2</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Average Guests per Reservation Card -->
+                    <div class="col-lg-4">
+                        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                            <div class="card-gradient-header" role="heading" aria-level="2">Average Guests per Reservation</div>
+                            <div class="card-gradient-body" role="text">
+                                <h5 class="card-title" aria-label="Average Guests per Reservation: 3">3</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Analytics Data -->
+                <h1>Analytics</h1>
+
+                <div class="row">
+                    <!-- Reservations Chart -->
+                    <div class="col-lg-6">
+                        <canvas id="reservationsChart"></canvas>
+                    </div>
+
+                    <!-- Status Chart -->
+                    <div class="col-lg-6">
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <!-- Charts will be populated here -->
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer role="contentinfo" aria-label="Site Information">
+        <div class="footer-container">
+            <div class="row">
+                <!-- Company Details -->
+                <div class="footer-section col-lg-4">
+                    <h5 role="heading" aria-level="2">Our Company</h5>
+                    <p>123 Main Street, Anytown, Any County, A123 4AB</p>
+                    <p>+123-456-7890</p>
+                    <p>info@example.com</p>
+                </div>
+
+                <!-- Useful Links -->
+                <div class="footer-section col-lg-4">
+                    <h5 role="heading" aria-level="2">Useful Links</h5>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="footer-section col-lg-4">
+                    <h5 role="heading" aria-level="2">Follow Us</h5>
+                    <a href="#" id="facebook-link" aria-label="Facebook Link"><img src="../assets/images/facebook.png" alt="Facebook Logo"></a>
+                    <a href="#" id="twitter-link" aria-label="Twitter Link"><img src="../assets/images/twitter.png" alt="Twitter Logo"></a>
+                    <a href="#" id="linkedin-link" aria-label="LinkedIn Link"><img src="../assets/images/instagram.png" alt="Instagram Logo"></a>
+                </div>
+                <small>&copy; 2023 Our Company. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

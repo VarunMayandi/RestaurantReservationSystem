@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spot The Dine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Spot The Dine</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./MainPage.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./RRS_admin/menu/menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./RRS_user/tablereservation.html">Reserve</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./RRS_user/ind.html">Feedback</a>
+                </li>
+            </ul>
+            <div class="navbar-nav">
+                <button class="btn btn-sm btn-outline-secondary mr-2" type="button">Login</button>
+                <button class="btn btn-sm btn-outline-secondary" type="button">Signup</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="top-container">
+        <div class="logo-container">
+            <img src="./assets/images/STD_white.png" alt="Spot The Dine Logo" class="logo">
+        </div>
+    </div>
+
+    <div class="quote-container">
+        <blockquote cite="Author URL">
+            <p class="quote">"Come let's Indulge in Exquisite Dining Experiences"</p>
+            <footer>— <cite class="citation"><span class="author">Chef John Doe</span>, <span class="source">Spot The Dine</span></cite></footer>
+        </blockquote>
+    </div>
+
+    <main>
+        <section class="card-grid">
+            <div class="card">
+                <div class="card-image">
+                    <img src="./assets/images/special_dish.jpg" alt="Delicious Dish Image">
+                </div>
+                <div class="card-content">
+                    <h2>Delicious Title</h2>
+                    <p>Experience the delight of our chef's special dish. A perfect blend of flavors and textures.</p>
+                    
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="./assets/images/M_Random_dec.jpg" alt="Cozy Interior Image">
+                </div>
+                <div class="card-content">
+                    <h2>Cozy Atmosphere</h2>
+                    <p>Our restaurant offers a warm and inviting atmosphere, perfect for a memorable dining experience.</p>
+                    
+                </div>
+            </div>
+
+            <!-- Additional Cards -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="./assets/images/Indulgent_dessert.jpg" alt="Exquisite Dessert Image">
+                </div>
+                <div class="card-content">
+                    <h2>Indulgent Desserts</h2>
+                    <p>Satisfy your sweet cravings with our exquisite selection of desserts. Each bite is a journey of sweetness.</p>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer aria-label="Website Footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>About Us</h2>
+                <p>Spot The Dine is not just a restaurant; it's a celebration of flavors and culinary craftsmanship.</p>
+            </div>
+
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="./MainPage.html">Home</a></li><br />
+                    <li><a href="./RRS_admin/menu/menu.html">Menu</a></li><br/>
+                    <li><a href="./RRS_admin/manage_restaurant/Add.html">Admin</a></li><br />
+                    <li><a href="#">Contact Us</a></li><br />
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h2>Stay in Touch</h2>
+                <ul>
+                    <li><a href="#"><img src="./assets/images/facebook.png" alt="Facebook Link"></a></li>
+                    <li><a href="#"><img src="./assets/images/instagram.png" alt="Instagram Link"></a></li>
+                    <li><a href="#"><img src="./assets/images/twitter.png" alt="Twitter Link"></a></li>
+                </ul>
+
+                <form id="footer-form" method="post" action="subscribe">
+                    <label for="emailInput">Subscribe to our newsletter:</label>
+                    <input type="email" id="emailInput" name="email" aria-required="true" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <p>&copy; 2022 Spot The Dine. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+</body>
+</html>

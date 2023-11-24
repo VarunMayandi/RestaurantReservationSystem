@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Restaurant</title>
+    <link rel="stylesheet" href="./styles.css"> <!-- Assuming you have a shared stylesheet -->
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./logo.png" alt="Your Logo">
+        </div>
+        <h1>Your Restaurant Name</h1>
+    </header>
+
+    <div class="admin-dashboard">
+        <div class="sidebar">
+            <div class="admin-profile">
+                <img src="./admin-profile.jpg" class="newadmin" alt="Admin Profile">
+            </div>
+            <nav aria-label="Admin navigation" class="admin-nav">
+                <ul>
+                    <li><a href="../RRS Main Admin page.html">Dashboard</a></li>
+                    <li><a href="./Manage Restaurant.html">Manage Reservations</a></li>
+                    <li><a href="./Manage Tables.html">Manage Tables</a></li>
+                    <li><a href="./Remove.html">Remove</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main class="main-content">
+          <h1>Remove Restaurant</h1>
+          <form action="./remove-restaurant-endpoint" method="post">
+              <label for="restaurantName">Name of the Restaurant:</label>
+              <input type="text" id="restaurantName" name="restaurantName" placeholder="Name of the Restaurant" required>
+      
+              <label for="street">Street:</label>
+              <input type="text" id="street" name="street" placeholder="Street" required>
+      
+              <label for="city">City:</label>
+              <input type="text" id="city" name="city" placeholder="City" required>
+      
+              <!-- Additional Reservation Information -->
+              <label for="reservationDate">Reservation Date:</label>
+              <input type="date" id="reservationDate" name="reservationDate" required>
+      
+              <label for="reservationTime">Reservation Time:</label>
+              <input type="time" id="reservationTime" name="reservationTime" required>
+      
+              <label for="numOfGuests">Number of Guests:</label>
+              <input type="number" id="numOfGuests" name="numOfGuests" min="1" required>
+      
+              <label for="specialRequests">Reason:</label>
+              <textarea id="specialRequests" name="specialRequests" placeholder="Any special requests..." rows="4"></textarea>
+      
+              <button type="submit" class="nav-link button">Remove</button>
+          </form>
+      </main>
+
+    <footer aria-label="Website Footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>About Us</h2>
+                <p>We provide the best dining experience to our customers. Visit us to explore our wide range of culinary delights.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Reserve a Table</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h2>Stay in Touch</h2>
+                <ul>
+                    <li><a href="#"><img src="./facebook.png" alt="Facebook Link"></a></li>
+                    <li><a href="#"><img src="./instagram.png" alt="Instagram Link"></a></li>
+                    <li><a href="#"><img src="./twitter.png" alt="Twitter Link"></a></li>
+                </ul>
+                
+                <form id="footer-form" method="post" action="subscribe">
+                    <label for="emailInput">Subscribe to our newsletter:</label>
+                    <input type="email" id="emailInput" name="email" aria-required="true" required>
+                    <button type="submit">Subscribe</button>
+                </form>  
+            </div>
+            
+            <p>&copy; 2022 Your Restaurant Name. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
